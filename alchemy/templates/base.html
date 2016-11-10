@@ -1,0 +1,40 @@
+{% load bootstrap3 %}
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Alchemy Game</title>
+  <meta name="author" content="Syseľ">
+
+  {% block css %}
+    {% bootstrap_css %}
+  {% endblock %}
+</head>
+
+<body>
+  {% block body %}
+    {% include "parts/navigation.html" %}
+
+    <main class="container" style="padding-top: 30px"}>
+      {% block page %}
+        <head>
+          <div class="page-header">
+            {% block page_header %}
+            {% endblock %}
+          </div>
+        </head>
+        <div>
+          {% block page_content %}
+          {% endblock %}
+        </div>
+      {% endblock %}
+    </main>
+  {% endblock %}
+  {% block js %}
+    {% bootstrap_javascript jquery=1 %}
+  {% endblock %}
+</body>
+</html>

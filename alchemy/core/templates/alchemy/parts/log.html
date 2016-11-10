@@ -1,0 +1,10 @@
+<table class="table table-condensed">
+  <tbody>
+    {% for log in logs %}
+      <tr>
+        <td>{{ log.datetime|date:"Y-m-d H:i" }}</td>
+        <td>{{ log.text }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

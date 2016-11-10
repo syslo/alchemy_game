@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load alchemy %}
+
+{% block page_header %}
+<h1>Crafting</h1>
+{% endblock %}
+
+{% block page_content %}
+  <p>
+    <form action="" method="POST" class="form-inline">
+      {% csrf_token %}
+      {% bootstrap_form form layout='inline' %}
+      <input type="submit" class="btn btn-primary" value="Craft" />
+      <button type="button" class="btn btn-deafult" onclick="location.href='.'">Reload</button>
+    </form>
+  </p>
+  <p>
+    {% user_logs %}
+  </p>
+  <h2>Resources:</h2>
+  <div class="row">
+    {% for account in accounts %}
+      <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2">
+        <p>{{account.item.name}}: <b>{{account.credit}}</b></p>
+      </div>
+    {% endfor %}
+  </div>
+  
+{% endblock %}

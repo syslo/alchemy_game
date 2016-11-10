@@ -25,7 +25,7 @@ SECRET_KEY = '0)*=7oqb)#y7y6i!@+m34!-n0z1$w&3z*lo#3haqwv_da7avfs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.30.1.211']
 
 
 # Application definition
@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'bootstrap3',
+    'easy_select2',
+
+    'alchemy',
     'alchemy.core',
 ]
 
@@ -120,3 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Login
+
+LOGIN_URL = 'login'

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% load alchemy %}
+
+{% block page_header %}
+<h1>Mining</h1>
+{% endblock %}
+
+{% block page_content %}
+  <p>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form layout='inline' %}
+      <input type="submit" class="btn btn-primary" value="Craft" />
+    </form>
+  </p>
+  <p>
+    {% user_logs limit=30 %}
+  </p>
+  
+{% endblock %}
